@@ -1,0 +1,11 @@
+install.packages("httr")
+install.packages("readxl")
+library("httr")
+library("readxl")
+GET("https://query.data.world/s/oga2n5bxmbylvfxlygzr6em2bab3kn", write_disk(tf <- tempfile(fileext = ".xlsx")))
+df <- read_excel(tf)
+
+total_1989 <- sum(df$`1989`)
+total_1990 <- sum(df$`1990`)
+total_1991 <- sum(df$`1991`)
+total_1993 <- sum(df$`1993`)
